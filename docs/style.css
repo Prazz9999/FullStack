@@ -1,0 +1,189 @@
+/* ----- Root Theme Colors ----- */
+:root {
+  --bg: #eef2f7;
+  --card: #ffffff;
+  --primary: #3366ff;
+  --primary-hover: #1e4fe3;
+  --danger: #ff5c5c;
+  --danger-hover: #e04343;
+  --text: #1f1f1f;
+  --muted: #6c757d;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* ----- Base Setup ----- */
+body {
+  background: var(--bg);
+  margin: 0;
+  padding: 40px;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: var(--text);
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 32px;
+  font-weight: 700;
+}
+
+/* ----- Cards ----- */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 26px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow);
+  transition: 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* ----- Inputs ----- */
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  border: 1px solid #dcdfe4;
+  background: #f9fbfd;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: var(--primary);
+  background: #fff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(51,102,255,0.15);
+}
+
+/* Grid for add form */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+/* ----- Buttons ----- */
+.btn {
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 500;
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn.danger {
+  background: #ffe9e9;
+  color: var(--danger);
+  border: 1px solid #ffc1c1;
+}
+
+.btn.danger:hover {
+  background: #ffdcdc;
+}
+
+.btn.outline {
+  background: #eef2f7;
+  border: 1px solid #d2d6dc;
+}
+
+.btn.outline:hover {
+  background: #e3e9f0;
+}
+
+/* ----- Search Bar ----- */
+.search {
+  margin-top: 12px;
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+
+/* ----- Movie Item ----- */
+.movie-item {
+  background: #ffffff;
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  transition: 0.25s ease;
+}
+
+.movie-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+.movie-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.movie-genre {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Action buttons container */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* ----- Modal Styling ----- */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  width: 350px;
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  animation: fadeUp 0.25s ease;
+}
+
+@keyframes fadeUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);   opacity: 1; }
+}
+
+.modal-actions {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+}
